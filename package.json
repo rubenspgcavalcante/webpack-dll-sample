@@ -1,0 +1,25 @@
+{
+  "name": "webpack-dll-sample",
+  "version": "1.0.0",
+  "description": "A sample of DllPlugin usage",
+  "main": "src/index.js",
+  "author": "Rubens Pinheiro Goncalves Cavalcante",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "url": "https://github.com/rubenspgcavalcante/webpack-dll-sample",
+    "type": "git"
+  },
+  "scripts": {
+    "build": "NODE_ENV=development yarn webpack",
+    "build:dll": "yarn build:with-dll --env.compile_dll",
+    "build:with-dll": "yarn build --config webpack-with-dll.config.js",
+    "start": "yarn build --env.analyze --env.reportPath=\"docs/standart.html\"",
+    "start:dll": "yarn build:dll && yarn build:with-dll --env.analyze --env.reportPath=\"docs/with-dll.html\""
+  },
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10"
+  }
+}
